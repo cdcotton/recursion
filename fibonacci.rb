@@ -11,4 +11,17 @@ def fibs(n)
   puts "Non-recursive: #{output.join(', ')}"
 end
 
-fibs(10)
+def fibs_rec(n)
+  if n < 2
+    return n
+  else
+    return fibs_rec(n - 1) + fibs_rec(n - 2)
+  end
+end
+
+output = []
+10.times do |i|
+  output << fibs_rec(i)
+end
+
+puts output.join(', ')
